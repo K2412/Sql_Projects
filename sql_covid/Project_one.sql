@@ -101,7 +101,7 @@ Create View Big_common_wealth_deaths As
 Select date, Sum(new_cases) As total_cases, Sum(new_deaths) As total_deaths, (Sum(new_deaths)/ Sum(new_cases)) *100 As death_percentage
 From deaths
 Group By date
-<<<<<<< HEAD:sql_covid/Project_one.sql
+
 
 Create View canada_vs_Uk_Nz_Aus As
 Select date, Sum(new_cases) As total_cases, Sum(new_deaths) As total_deaths, (Sum(new_deaths)/ Sum(new_cases)) *100 As death_percentage
@@ -125,5 +125,4 @@ Create View percentage_of_population_infected As
 Select location, date, total_cases, population, ((total_cases/population)*100) As infected_population_percentage
 From deaths
 Order By date
-=======
->>>>>>> fea49758c2af19e573433e8b671682c2ff441a37:sql_covid/Project one.sql
+
