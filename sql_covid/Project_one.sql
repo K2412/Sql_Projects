@@ -101,3 +101,26 @@ Create View Big_common_wealth_deaths As
 Select date, Sum(new_cases) As total_cases, Sum(new_deaths) As total_deaths, (Sum(new_deaths)/ Sum(new_cases)) *100 As death_percentage
 From deaths
 Group By date
+
+Create View canada_vs_Uk_Nz_Aus As
+Select date, Sum(new_cases) As total_cases, Sum(new_deaths) As total_deaths, (Sum(new_deaths)/ Sum(new_cases)) *100 As death_percentage
+From deaths
+Where location != 'canada'
+Group By date
+
+Create View Highest_infection_rate As 
+Select location, Max(total_cases) As infection_count_ceiling, population, Max((total_cases/population)*100) As infected_population_percentage
+From deaths
+Group By location, population 
+Order By infected_population_percentage Desc
+
+
+Create View odds_of_dying As
+Select location, date, total_cases, total_deaths, ((total_deaths/total_cases)*100) As death_percentage
+From deaths
+Order By date
+
+Create View percentage_of_population_infected As 
+Select location, date, total_cases, population, ((total_cases/population)*100) As infected_population_percentage
+From deaths
+Order By date
