@@ -28,27 +28,6 @@ Select date, Sum(new_cases) As total_cases, Sum(new_deaths) As total_deaths, (Su
 From deaths
 Group By date
 
-Select date, Sum(new_cases) As total_cases, Sum(new_deaths) As total_deaths, (Sum(new_deaths)/ Sum(new_cases)) *100 As death_percentage
-From deaths
-Where location != 'canada'
-Group By date
-
-Select date, Sum(new_cases) As total_cases, Sum(new_deaths) As total_deaths, (Sum(new_deaths)/ Sum(new_cases)) *100 As death_percentage
-From deaths
-Where location != '%united%'
-Group By date
-
-Select date, Sum(new_cases) As total_cases, Sum(new_deaths) As total_deaths, (Sum(new_deaths)/ Sum(new_cases)) *100 As death_percentage
-From deaths
-Where location != '%zealand%'
-Group By date
-
-Select date, Sum(new_cases) As total_cases, Sum(new_deaths) As total_deaths, (Sum(new_deaths)/ Sum(new_cases)) *100 As death_percentage
-From deaths
-Where location != '%austr%'
-Group By date
-
-
 
 
 -- total population vacination rate 
